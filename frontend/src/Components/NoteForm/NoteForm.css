@@ -1,0 +1,78 @@
+.note-form-page {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-image: radial-gradient(circle at center, #292E36 0%, #20242B 50%, #1c2026 100% );
+    border: 3px solid #686e75;
+    color: #fff;
+}
+.page-title{
+    margin-bottom: 15px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: none;
+}
+.form-group .form-label-category{
+    display: block;
+    margin-bottom: 10px;
+    
+}
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 3px solid #686e75;
+    color:  #ffffff; ;
+    background-color: transparent;
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline: none;
+}
+.form-group select{
+    -moz-appearance: none; 
+    -webkit-appearance: none;
+    appearance: none; 
+}
+.form-group select option:not([value=""]) {
+    color: white;
+    background-color: #24282e;
+}
+.form-group input::placeholder, .form-group textarea::placeholder {
+    color: #ffffff; 
+}
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-ok, .btn-cancel{
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    color: #ffffff;
+    background-color: transparent;
+    border: 3px solid #686e75;
+    cursor: pointer;
+}
+.btn-ok:hover, .btn-cancel:hover{
+    background-color: #2f343a;
+    border-color: #c37cfc;
+    box-shadow: #c37cfc 0px 0px 5px;
+    transition: all 0.1s ease-in-out;
+}
+.btn-cancel:hover{
+    border-color: rgb(255, 42, 42);
+    box-shadow: rgb(255, 42, 42) 0px 0px 5px;
+    transition: all 0.1s ease-in-out;
+}

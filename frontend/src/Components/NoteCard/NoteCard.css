@@ -1,0 +1,110 @@
+.note-card {
+    background-color: #23282e;
+    border: 3px solid #686e75;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+}
+
+.note-title {
+    color: #fff;
+    margin-top: 0;
+    font-size: 24px;
+    word-break: break-word; 
+}
+
+.note-category {
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-left: 3px solid #686e75;
+    border-bottom: 3px solid #686e75;
+    height: 30px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 0 8px;
+    background-color: #686e75;
+    text-transform: capitalize;
+}
+
+.note-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #7f8c8d;
+    word-break: break-word;
+}
+
+.note-date {
+    display: block;
+    margin-top: 10px;
+    color: #7f8c8d;
+    font-size: 12px;
+    border-top: 1px solid #686e75;
+    padding-top: 10px;
+}
+
+.note-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+.edit-archive-actions{
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-edit, .btn-archive, .btn-unarchive, .btn-delete {
+    background-color: transparent;
+    border: 3px solid #686e75;
+    color: #fff;
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-edit:hover, .btn-archive:hover, .btn-unarchive:hover, .btn-delete:hover {
+    background-color: #2f343a;
+    border-color: #c37cfc;
+    box-shadow: #c37cfc 0px 0px 5px;
+    transition: all 0.1s ease-in-out;
+}
+.btn-delete:hover{
+    border-color: rgb(255, 42, 42);
+    box-shadow: rgb(255, 42, 42) 0px 0px 5px;
+    transition: all 0.1s ease-in-out;
+}
+
+@media(max-width: 400px){
+    .note-actions{
+        flex-direction: column;
+        align-items: end;
+    }
+}

@@ -1,0 +1,29 @@
+.logout-container{
+  gap: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-logout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: transparent;
+  color: #FFF;
+  border: 3px solid #686e75;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.btn-logout:hover{
+  background-color: #2f343a;
+  border-color: rgb(255, 42, 42);
+  box-shadow: rgb(255, 42, 42) 0px 0px 5px;
+  transition: all 0.1s ease-in-out;
+}
+@media(max-width: 500px){
+  .username{
+    display: none;
+  }
+}

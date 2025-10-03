@@ -1,0 +1,98 @@
+.auth-container{
+  width: 100%;
+  height: 100dvh;
+  background-image: radial-gradient(circle at center, #292E36 0%, #20242B 50%, #1c2026 100% );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+}
+.auth-card{
+  border: 3px solid #686e75;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: #ffffff;
+  gap: 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 8px rgba(0, 0, 0, 0.342);
+}
+.title-container{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.title-container img{
+  width: 40px;
+  height: 40px;
+}
+
+.auth-container form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+  width: 100%;
+}
+.input-group{
+  border: 3px solid #686e75;
+  border-radius: 8px;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+.input-group label{
+  padding-right: 10px;
+}
+.input-group input{
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  border-left: 3px solid #686e75;
+  height: 100%;
+  max-width: 217px;
+  width: 100%;
+  min-width: 0;
+  padding-left: 10px;
+  border-radius: 0 5px 5px 0;
+}
+.input-group input::placeholder{
+  color: #686e75;
+  font-weight: 400;
+  font-size: 12px;
+}
+.btn-register-login {
+  width: 200px;
+  height: 40px;
+  border-radius: 8px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(270deg, #59098f, #8d2bc2, #59098f);
+  background-size: 200% 200%;
+  transition: background-position 0.8s ease-in-out;
+}
+
+.btn-register-login:hover {
+  background-position: right center;
+}
+.message{
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-weight: 400;
+}
+.form-link{
+  text-decoration: none;
+  color: #8d2bc2; 
+  font-size: 16px;
+  font-weight: 400;
+}
