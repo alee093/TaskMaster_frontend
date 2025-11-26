@@ -1,85 +1,88 @@
-##TaskMaster
-TaskMaster is a full-stack task management application developed as part of a technical test.
-The app allows users to create, edit, delete, archive, and filter tasks, with user authentication (login & register).
+# ✨ TaskMaster Frontend - Gestión de Tareas
 
-<---------------------------------------------------------------------->
+TaskMaster es la interfaz de usuario **responsiva y minimalista** para la aplicación de gestión de tareas Full-Stack. Construida con React y Vite, esta aplicación se integra completamente con la API RESTful de TaskMaster para ofrecer una experiencia de usuario completa.
 
-🚀 Features
--User authentication: Register & Login.
--CRUD operations for tasks: create, edit, delete.
--Archive/unarchive tasks.
--Filtering system to organize tasks.
--Clean and minimal React frontend.
--MongoDB + Express + Node.js backend.
+---
 
-<---------------------------------------------------------------------->
+## 🌟 Características y Funcionalidad
 
-🛠️ Tech Stack
--Frontend: React, CSS
--Backend: Node.js, Express
--Database: MongoDB
--Shell / DevOps: Bash script (start.sh)
+El Frontend cumple con los requisitos del trabajo integrador al implementar todas las pantallas necesarias para la interacción del usuario con la API.
 
-Others:
--CORS
--JSON Web Tokens (JWT)
--Middlewares, routing, etc.
+### Interfaz de Usuario
+* **Diseño Responsivo:** Interfaz adaptativa que funciona correctamente desde **320px hasta 2000px** (móvil, tablet y desktop).
+* **Experiencia Clara:** Diseño minimalista y funcional centrado en la usabilidad para gestionar el flujo de tareas.
 
-<---------------------------------------------------------------------->
+### Funcionalidad Integrada con la API
+* **Autenticación:** Pantallas de **Registro** y **Login** (manejo y persistencia del JWT).
+* **Verificación de Email:** Manejo del flujo de activación por correo electrónico.
+* **Gestión de Tareas (CRUD):**
+    * **Listado:** Muestra todas las tareas del usuario.
+    * **Crear y Editar:** Formularios modales para modificar las tareas.
+    * **Eliminar:** Botón de eliminación.
+    * **Archivar/Desarchivar:** Funcionalidad para mover tareas entre estados activos/archivados.
+* **Filtros:** Sistema para organizar y visualizar tareas por estado o criterios específicos.
+* **Rutas Protegidas:** Uso de *React Router* y lógica de estado para restringir el acceso a las rutas principales si el usuario no está autenticado.
 
-📂 Project Structure
-/frontend   → React app
-/backend    → Express + MongoDB API
+---
 
-<---------------------------------------------------------------------->
+## 🛠️ Stack Tecnológico
 
-⚙️ Installation & Setup
-Prerequisites
--Node.js >= 18
--MongoDB instance (local or cloud, e.g. MongoDB Atlas)
+| Categoría | Tecnología | Descripción |
+| :--- | :--- | :--- |
+| **Framework** | **React** | Biblioteca principal para construir la interfaz. |
+| **Tooling** | **Vite** | Empaquetador y servidor de desarrollo rápido. |
+| **Estilos** | **CSS Estándar** | Estilizado enfocado en rendimiento y responsividad. |
+| **Despliegue** | **Vercel** | Plataforma de hosting para el despliegue público del Frontend. |
 
-Clone the repository
--git clone https://github.com/hirelens-challenges/Baran-078b5c
--cd Baran-078b5c
+---
 
-Start the project
-chmod +x start.sh
-./start.sh
+## ⚙️ Instalación y Configuración Local
 
-This script will start both frontend and backend services.
+### Prerrequisitos
+* **Node.js** (versión recomendada: 18+ o superior)
+* El **TaskMaster Backend** debe estar corriendo (o usar la versión desplegada).
 
-<---------------------------------------------------------------------->
+### Pasos para el Setup
+1.  **Clonar el Repositorio:**
+    ```bash
+    git clone [https://github.com/alee093/TaskMaster_frontend.git](https://github.com/alee093/TaskMaster_frontend.git)
+    cd TaskMaster_frontend
+    ```
 
-Environment Variables
-For the backend, configure:
--MONGO_URI
--JWT_SECRET
--PORT (optional)
+2.  **Instalar Dependencias:**
+    ```bash
+    npm install
+    ```
 
-For the frontend:
--REACT_APP_API_URL pointing to your backend
+3.  **Configurar Variables de Entorno:**
+    Crea un archivo llamado `.env` en la raíz del proyecto y establece la URL de tu API de Backend:
 
-<---------------------------------------------------------------------->
+    ```env
+    VITE_API_URL="[https://taskmaster-backend-1-7xl6.onrender.com](https://taskmaster-backend-1-7xl6.onrender.com)"
+    # Si estás corriendo el backend localmente, usa:
+    # VITE_API_URL="http://localhost:3001"
+    ```
 
-💻 Usage
--Register a new account or log in with an existing one.
--Create, edit, delete, or archive tasks.
--Use filters to manage your workflow.
+4.  **Iniciar la Aplicación:**
+    ```bash
+    npm run dev
+    ```
 
-<---------------------------------------------------------------------->
+    La aplicación se iniciará típicamente en `http://localhost:5173`.
 
-📸 Screenshots
-<img src="./screenshots/Login.png" alt="Login">
-<img src="./screenshots/Register.png" alt="Register">
-<img src="./screenshots/HomePage.png" alt="HomePage">
-<img src="./screenshots/HomePageWithTasks.png" alt="HomePageWithTasks">
-<img src="./screenshots/FilteredHomePage.png" alt="FilteredHomePage">
-<img src="./screenshots/ArchivedPage.png" alt="ArchivedPage">
-<img src="./screenshots/CreateNew.png" alt="CreateNew">
+---
 
-📌 Notes
+## 📸 Capturas de Pantalla (Ejemplo de Interfaz)
+hay una carpeta que se llama screenshots, ahi podes encontrar todas las imagenes de este proyecto
 
--The original assignment requested the use of an ORM.
--Due to time constraints (3 days) and my current student level, I decided to implement the backend with MongoDB instead of learning a new ORM on the spot.
--My priority was delivering a complete and functional solution, even if it didn’t strictly follow the ORM requirement.
--I couldnt deploy web page in time
+## 🔗 Enlaces del Proyecto
+
+* **Web App Desplegada (Frontend):** `https://task-master-frontend-nu.vercel.app`
+* **API Desplegada (Backend):** `https://taskmaster-backend-1-7xl6.onrender.com`
+* **Repositorio Backend:** [TaskMaster_backend](https://github.com/alee093/TaskMaster_backend)
+
+---
+
+## 🤝 Autor y Contacto
+
+* **Autor:** instagram: alee_baran - email: baran.alejandro04@gmail.com
