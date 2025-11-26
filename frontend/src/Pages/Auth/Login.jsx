@@ -44,7 +44,7 @@ const Login = () => {
 
           <div className="input-group">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} required placeholder='Password...' />
+            <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} required placeholder='Password...' autoComplete='off'/>
           </div>
 
           <button type="submit" className="btn btn-register-login" disabled={isLoading}>
