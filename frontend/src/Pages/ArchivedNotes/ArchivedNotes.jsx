@@ -13,6 +13,8 @@ function ArchivedNotes() {
     navigate('/')
   }
 
+
+
   const loadNotes = useCallback(async () => {
     setIsLoading(true)
     setError(null)
@@ -66,7 +68,7 @@ function ArchivedNotes() {
     <div className="notes-page archived-notes">
       <header>
         <h2>TaskMaster</h2>
-        <h4>Archived Tasks</h4>
+        <h2>Archived Tasks</h2>
       </header>
       <div className='section-container'>
         <aside>

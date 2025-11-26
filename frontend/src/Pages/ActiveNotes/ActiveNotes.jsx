@@ -20,6 +20,9 @@ function ActiveNotes() {
   const navigateToAddNewNote = () => {
     navigate('/new')
   }
+  const navigateToPublic = () => {
+    navigate('/public')
+  }
 
   const loadNotes = useCallback(async () => {
     setIsLoading(true)
@@ -86,7 +89,12 @@ function ActiveNotes() {
               Active Tasks
             </span>
           </div>
-          <button className='btn btn-go-to' onClick={navigateToArchived}>Go to Archived</button>
+          <div className='buttons-container'>
+            <button className='btn btn-go-to' onClick={navigateToArchived}>Go to Archived</button>
+            <button onClick={navigateToPublic} className="btn btn-go-to public" style={{ marginTop: '8px' }}>
+              View Public Notes
+            </button>
+          </div>
         </aside>
 
         <section>

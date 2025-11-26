@@ -192,3 +192,21 @@ export async function deleteNote (noteId) {
     throw error
   }
 }
+
+export async function fetchPublicNotes () {
+  try {
+    const response = await fetch(`${BASE_URL}/public`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' } // public endpoint
+    })
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch public notes: ${response.statusText}`)
+    }
+
+    return await response.json()
+  } catch (error) {
+    console.error('API Error (fetchPublicNotes):', error)
+    throw error
+  }
+}

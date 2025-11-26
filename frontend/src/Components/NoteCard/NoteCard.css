@@ -17,29 +17,50 @@
     transform: translateY(-5px);
 }
 
+.note-header-badges {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+}
+
 .note-title {
     color: #fff;
-    margin-top: 0;
+    margin-top: 12px;
     font-size: 24px;
     word-break: break-word; 
 }
 
 .note-category {
-    font-size: 14px;
+    font-size: 12px;
     color: #fff;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    border-left: 3px solid #686e75;
-    border-bottom: 3px solid #686e75;
-    height: 30px;
-    width: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0 0 0 8px;
+    padding: 4px 10px;
+    border-radius: 4px;
     background-color: #686e75;
     text-transform: capitalize;
+    display: inline-block;
+}
+
+.note-privacy {
+    font-size: 12px;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.note-privacy.public {
+    background-color: #c37cfc;
+}
+
+.note-privacy.private {
+    background-color: #ef4444;
+    box-shadow: 0 0 5px #ef4444;
 }
 
 .note-description {
@@ -100,6 +121,10 @@
     border-color: rgb(255, 42, 42);
     box-shadow: rgb(255, 42, 42) 0px 0px 5px;
     transition: all 0.1s ease-in-out;
+}
+.note-public-meta{
+    color: #7f8c8d;
+    font-size: 14px;
 }
 
 @media(max-width: 400px){

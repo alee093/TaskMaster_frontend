@@ -76,3 +76,18 @@
     box-shadow: rgb(255, 42, 42) 0px 0px 5px;
     transition: all 0.1s ease-in-out;
 }
+.public-container{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row-reverse;
+    gap: 10px;
+    padding: 10px 0;
+    max-width: 65%;
+    cursor: pointer;
+    border-bottom: 3px solid #686e75;
+}
+#is_public{
+    width: 15px;
+    height: 15px;
+}

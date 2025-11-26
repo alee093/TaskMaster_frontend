@@ -5,6 +5,8 @@ import './App.css'
 import NoteForm from './Components/NoteForm/NoteForm.jsx'
 import Register from './Pages/Auth/Register.jsx'
 import Login from './Pages/Auth/Login.jsx'
+import VerifyEmail from './Pages/Auth/VerifyEmail.jsx'
+import PublicNotes from './Pages/PublicNotes/PublicNotes.jsx'
 import ProtectedRoute from './Pages/Auth/ProtectedRoute.jsx'
 import { AuthProvider } from './Context/AuthContext.jsx'
 
@@ -19,6 +21,8 @@ function App() {
             
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/verify-email" element={<VerifyEmail />} />
+            <Route path="/public" element={<PublicNotes />} />
 
             <Route element={<ProtectedRoute />}>
               <Route path="/" element={<ActiveNotes />} /> 

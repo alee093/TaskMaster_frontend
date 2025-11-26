@@ -7,6 +7,7 @@ const initialFormState = {
     title: '',
     description: '',
     category: '', 
+    is_public: false
 }
 
 function NoteForm() {
@@ -27,6 +28,7 @@ function NoteForm() {
                         title: data.title,
                         description: data.description,
                         category: data.category || '', 
+                        is_public: !!data.is_public
                     })
                     setIsLoading(false)
                 })
@@ -39,10 +41,11 @@ function NoteForm() {
     }, [id, isEditing])
 
     const handleChange = (e) => {
-        const { name, value } = e.target
+        const { name, value, type, checked } = e.target
+        const newValue = type === 'checkbox' ? checked : value
         setFormData(prevData => ({
             ...prevData,
-            [name]: value,
+            [name]: newValue,
         }))
     }
 
@@ -121,6 +124,19 @@ function NoteForm() {
                         <option value="school">School</option>
                         <option value="house">House</option>
                     </select>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="is_public">Public:</label>
+                    <div className='public-container'>
+                        <input
+                            type="checkbox"
+                            id="is_public"
+                            name="is_public"
+                            checked={formData.is_public}
+                            onChange={handleChange}
+                        />
+                        <small>When public, other users can view this note (read-only).</small>
+                    </div>
                 </div>
                 
                 <div className="form-actions">
