@@ -10,7 +10,11 @@ function ActiveNotes() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
   const [filter, setFilter] = useState('all')
+  const [menuOpen, setMenuOpen] = useState(false)
   const navigate = useNavigate()
+
+  const toggleMenu = () => setMenuOpen(!menuOpen)
+  const closeMenu = () => setMenuOpen(false)
 
   const filteredNotes = notes.filter(note => filter === 'all' || note.category === filter)
 
@@ -78,11 +82,16 @@ function ActiveNotes() {
     <div className="notes-page active-notes">
       <header>
         <h2>TaskMaster</h2>
-        <LogoutButton />
+        <div className="header-actions">
+          <button className="burger-menu-btn" onClick={toggleMenu}>
+            <i className={`bi ${menuOpen ? 'bi-x' : 'bi-list'}`}></i>
+          </button>
+          <LogoutButton />
+        </div>
       </header>
       <div className='section-container'>
 
-        <aside>
+        <aside className={menuOpen ? 'aside-mobile-open' : ''}>
           <div className='div-active-tasks'>
             <span className='border-purple'></span>
             <span className='active-task-text'>
@@ -90,12 +99,13 @@ function ActiveNotes() {
             </span>
           </div>
           <div className='buttons-container'>
-            <button className='btn btn-go-to' onClick={navigateToArchived}>Go to Archived</button>
-            <button onClick={navigateToPublic} className="btn btn-go-to public" style={{ marginTop: '8px' }}>
+            <button className='btn btn-go-to' onClick={() => { navigateToArchived(); closeMenu(); }}>Go to Archived</button>
+            <button onClick={() => { navigateToPublic(); closeMenu(); }} className="btn btn-go-to public" style={{ marginTop: '8px' }}>
               View Public Notes
             </button>
           </div>
         </aside>
+        {menuOpen && <div className="overlay" onClick={closeMenu}></div>}
 
         <section>
           <div className='div-add'>

@@ -2,15 +2,21 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { fetchArchivedNotes, unarchiveNote, deleteNote } from '../../api/notes.js' 
 import NoteCard from '../../Components/NoteCard/NoteCard.jsx'
 import { useNavigate } from 'react-router'
+import './ArchivedNotes.css'
 
 function ArchivedNotes() {
   const [notes, setNotes] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [menuOpen, setMenuOpen] = useState(false)
   const navigate = useNavigate()
+
+  const toggleMenu = () => setMenuOpen(!menuOpen)
+  const closeMenu = () => setMenuOpen(false)
 
   const navigateToActive = () => {
     navigate('/')
+    closeMenu()
   }
 
 
@@ -66,12 +72,17 @@ function ArchivedNotes() {
 
   return (
     <div className="notes-page archived-notes">
-      <header>
+      <header className='archived-header'>
         <h2>TaskMaster</h2>
-        <h2>Archived Tasks</h2>
+        <div className="header-actions">
+          <button className="burger-menu-btn" onClick={toggleMenu}>
+            <i className={`bi ${menuOpen ? 'bi-x' : 'bi-list'}`}></i>
+          </button>
+          <h2 className='archived-tasks-title'>Archived Tasks</h2>
+        </div>
       </header>
       <div className='section-container'>
-        <aside>
+        <aside className={menuOpen ? 'aside-mobile-open' : ''}>
           <div className='div-active-tasks'>
             <span className='border-purple'></span>
             <span className='active-task-text'>
@@ -82,6 +93,7 @@ function ArchivedNotes() {
             Go to Active
           </button>
         </aside>
+        {menuOpen && <div className="overlay" onClick={closeMenu}></div>}
         <section>
           {notes.length === 0 ? (
             <p className="no-notes">You have no archived tasks.</p>

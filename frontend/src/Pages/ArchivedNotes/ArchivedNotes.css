@@ -1,6 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
-.notes-page header {
+.notes-page.archived-notes header {
     color: #ffffff;
     border-bottom: 3px solid #23282e;
     padding-bottom: 10px;
@@ -32,11 +32,11 @@
     color: #c37cfc;
 }
 
-.section-container{
+.notes-page.archived-notes .section-container {
     display: flex;
 }
 
-.section-container aside{
+.notes-page.archived-notes aside {
     height: calc(100vh - 80px);
     min-width: 150px;
     border-right: 3px solid #23282e;
@@ -45,13 +45,15 @@
     gap: 20px;
     padding: 20px 0;
 }
-.section-container section{
+
+.notes-page.archived-notes section {
     width: 100%;
     padding: 0 20px;
     min-height: 100%;
-    background-image: radial-gradient(circle at center, #292E36 0%, #20242B 50%, #1c2026 100% );
+    background-image: radial-gradient(circle at center, #292E36 0%, #20242B 50%, #1c2026 100%);
 }
-.border-purple{
+
+.border-purple {
     background-color: #c37cfc;
     width: 3px;
     height: 100%;
@@ -61,19 +63,14 @@
 
 @keyframes glow {
     from {
-    box-shadow: 0 0 5px #c37cfc, 0 0 8px #c37cfc;
+        box-shadow: 0 0 5px #c37cfc, 0 0 8px #c37cfc;
     }
     to {
-    box-shadow: 0 0 13px #c37cfc, 0 0 15px #c37cfc, 0 0 18px #c37cfc;
+        box-shadow: 0 0 13px #c37cfc, 0 0 15px #c37cfc, 0 0 18px #c37cfc;
     }
 }
-.buttons-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-.div-active-tasks{
+
+.div-active-tasks {
     display: flex;
     align-items: center;
     width: 100%;
@@ -81,14 +78,15 @@
     background-color: #24282e;
     color: #fff;
 }
-.active-task-text{
+
+.active-task-text {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.btn-go-to{
+.btn-go-to {
     width: 100%;
     height: 40px;
     border-radius: 0;
@@ -98,60 +96,13 @@
     cursor: pointer;
     font-weight: 400;
 }
-.btn-go-to:hover{
+
+.btn-go-to:hover {
     background-color: #2f343a;
 }
-.public{
-    box-shadow: 0 0 5px #c37cfc;
-}
-.filter-container{
-    color:  #ffffff; 
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-.filter-container select{
-    -moz-appearance: none; 
-    -webkit-appearance: none;
-    appearance: none; 
-    width: 80px;
-    height: 30px;
-    background-color: transparent;
-    color: #fff;
-    padding-left: 8px;
-    border: 3px solid #686e75;
-    border-radius: 5px;
-}
-.filter-container select option:not([value=""]) {
-    color: white;
-    background-color: #24282e;
-}
 
-.div-add{
-    width: 100%;
-    padding-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center
-}
-.btn-add{
-    padding: 0;
-    background-color: transparent;
-    border: none;
-    outline: none;
-}
-.bi-plus-circle{
-    font-size: 30px;
-    color: #fff;
-    cursor: pointer;
-}
-.bi-plus-circle:hover{
-    color: #c37cfc;
-    text-shadow: #c37cfc 0px 0px 5px;
-    transition: all 0.1s ease-in-out;
-}
 .notes-list {
-    position: relative; 
+    position: relative;
     padding-top: 10px;
     display: flex;
     width: 100%;
@@ -162,10 +113,10 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
 .notes-list::-webkit-scrollbar {
     display: none;
-} 
-
+}
 
 .no-notes, .error-message, .loading {
     text-align: center;
@@ -174,12 +125,7 @@
     color: #fff;
     border-radius: 8px;
     border: 3px solid #686e75;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-@media (max-width: 500px){
-    .filter-container label{
-        display: none;
-    }
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 470px) {
@@ -187,7 +133,18 @@
         display: block;
     }
 
-    .section-container aside {
+    .notes-page.archived-notes header {
+        justify-content: space-between;
+    }
+
+    .notes-page.archived-notes section {
+        padding: 0 20px;
+    }
+    .archived-tasks-title{
+      display: none;
+    }
+
+    .notes-page.archived-notes .section-container aside {
         position: fixed;
         top: 80px;
         left: -200px;
@@ -199,7 +156,7 @@
         z-index: 999;
     }
 
-    .section-container aside.aside-mobile-open {
+    .notes-page.archived-notes .section-container aside.aside-mobile-open {
         left: 0;
     }
 
@@ -213,7 +170,7 @@
         z-index: 998;
     }
 
-    .section-container {
+    .notes-page.archived-notes .section-container {
         position: relative;
     }
 }
